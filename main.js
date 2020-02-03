@@ -2,7 +2,11 @@ let particles = [];
 
 //setup function works same as start function in unity c# language
 function setup() {
-   createCanvas(window.innerWidth, window.innerHeight - 98)
+   let ctx = createCanvas(window.innerWidth, window.innerHeight - 98)
+
+
+   // k.style("box", "block");
+   // k.parent("startPage");
    const particleLength = Math.floor(window.innerWidth / 14.5);
    console.log(particleLength);
 
