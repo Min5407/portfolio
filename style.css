@@ -7,7 +7,7 @@
 
 :root{
    --primaryColor: #FFBA48;
-   --secondaryColor:  #049c09 ;
+   --secondaryColor:  #ca1d90 ;
 }
 
 /* utilities */
@@ -21,7 +21,8 @@ li{
 }
 
 body{
-   background: #252627;
+   /* background: #252627; */
+   background: linear-gradient(to left, #000000, #434343); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
    /* background-image: radial-gradient(circle, #0F2027, #203A43, #2C5364); */
    /* #0F2027
    #203A43
@@ -31,7 +32,8 @@ body{
 
 /* navigation menu */
 header{
-   background: #222;
+   /* background: #222; */
+
 
 }
 
@@ -134,7 +136,7 @@ header nav ul li a:hover{
    }
 }
 #startPage{
-   top:35%;
+   top:30%;
    left:50%;
  
    transform: translate(-50%,-50%);
@@ -163,7 +165,7 @@ header nav ul li a:hover{
    display: block;
    border:1.5px solid #ccc;
    position: absolute;
-   top:125%;
+   top:150%;
    left:50%;
    transform: translate(-50%,-50%);
    /* background: red; */
@@ -174,4 +176,110 @@ header nav ul li a:hover{
    color: var(--secondaryColor);
    border:1.5px var(--secondaryColor) solid;
    transition: 0.5s ease-in-out;
+}
+
+/* About page */
+
+#about{
+   color: white;
+   display: flex;
+   /* border:1px red solid; */
+   max-width: 1200px;
+   margin: 3rem auto;
+   justify-content: center;
+   align-items: center;
+   font-family: 'Playfair Display', serif;
+   /* flex-wrap: wrap; */
+   
+}
+
+
+#about-content{
+   flex:1;
+   /* border: 1px blue solid; */
+   height: 500px;
+   text-align: left;
+   padding: 6rem 1rem 1rem 5rem;
+   
+
+}
+#about-image{
+   flex:1;
+   height: 500px;
+   /* border: 1px blue solid; */
+   padding: 1rem;
+   text-align: left;
+
+}
+#about-content h1{
+   letter-spacing: 0.5rem;
+}
+
+
+#typeEffect{
+   color: var(--primaryColor);
+}
+#typeEffect::after{
+   /* border:1px red solid; */
+   content: "";
+   /* position: absolute; */
+   /* top: 0%; */
+   /* opacity: 0.5; */
+   animation: letterAnimation 15s  ease infinite;
+}
+@keyframes letterAnimation{
+
+   0%{
+      content: "Developer";
+      opacity: 1;
+   }
+   40%{
+      content: "Developer";
+      opacity: 1;
+   }
+   45%{
+      content: "Developer";
+      opacity: 0;
+   }
+   46%{
+      content: "Programmer";
+      opacity: 0;
+   }
+   51%{
+      content: "Programmer";
+      opacity: 1;
+   }
+   91%{
+      content: "Programmer";
+      opacity: 1;
+   }
+   96%{
+      content: "Programmer";
+      opacity: 0;
+   }
+   97%{
+      content: "Developer";
+      opacity: 0;
+
+   }
+   100%{
+      content: "Developer";
+      opacity: 1;
+
+   }
+   
+   
+   
+}
+
+#about-image img{
+   display: block;
+   /* height: 350px; */
+   /* border: 1px red solid; */
+   /* margin-bottom: 1rem; */
+}
+#about-image p{
+   letter-spacing: 0rem;
+   /* padding: 0.3rem; */
+   text-align: left;
 }

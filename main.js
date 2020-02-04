@@ -1,82 +1,108 @@
-let particles = [];
+// //particle effects
+// let particles = [];
+// let canvas;
 
-//setup function works same as start function in unity c# language
-function setup() {
-   let ctx = createCanvas(window.innerWidth, window.innerHeight - 98)
+// //setup function works same as start function in unity c# language
+// function setup() {
+//    canvas = createCanvas(window.innerWidth, window.innerHeight - 98)
 
 
-   // k.style("box", "block");
-   // k.parent("startPage");
-   const particleLength = Math.floor(window.innerWidth / 14.5);
-   console.log(particleLength);
+//    // k.style("box", "block");
+//    // k.parent("startPage");
 
-   for (let i = 0; i < particleLength; i++) {
-      particles.push(new Particle());
-   }
-}
+//    //number of particles
+//    const particleLength = Math.floor(window.innerWidth / 14.5);
 
-//draw function works same as update function in unity c# language
-function draw() {
-   // delete the previous one to make sure it wont leave any previous trail
-   background(37, 38, 39);
-   particles.forEach((p, index) => {
-      p.update();
-      p.draw();
-      p.connect(particles.slice(index));
+//    // console.log(particleLength);
 
-      // console.log(particles.slice(index))
+//    for (let i = 0; i < particleLength; i++) {
+//       particles.push(new Particle());
+//    }
+// }
+
+// //draw function works same as update function in unity c# language
+// function draw() {
+//    // delete the previous one to make sure it wont leave any previous trail
+//    background(37, 38, 39);
+//    particles.forEach((p, index) => {
+//       p.update();
+//       p.draw();
+//       p.connect(particles.slice(index));
+
+//       // console.log(particles.slice(index))
+//    })
+
+// }
+
+// class Particle {
+//    constructor() {
+//       this.pos = createVector(random(window.innerWidth), random(window.innerHeight - 98));
+//       this.speed = createVector(random(-2, 2), random(-2, 2));
+//       this.size = 10;
+//    }
+
+//    //creating another circle near the previous one
+//    update() {
+//       this.pos.add(this.speed);
+
+//       this.wall();
+//       // console.log(window.innerWidth);
+//       // console.log(window.innerHeight);
+//    }
+
+//    draw() {
+//       noStroke();
+//       fill('rgba(255,186,72,0.5)');
+//       circle(this.pos.x, this.pos.y, this.size);
+//    }
+
+//    //detect wall : 
+//    wall() {
+//       if (this.pos.x < 10 || this.pos.x > window.innerWidth - 10) {
+//          this.speed.x = this.speed.x * -1;
+//       }
+//       if (this.pos.y < 10 || this.pos.y > window.innerHeight - 100) {
+//          this.speed.y = this.speed.y * -1;
+//       }
+
+//    }
+
+//    //connect the particle
+
+//    connect(particles) {
+//       particles.forEach(p => {
+//          const d = dist(this.pos.x, this.pos.y, p.pos.x, p.pos.y);
+
+//          if (d < 120) {
+//             stroke('rgba(255,186,72,0.2)');
+//             line(this.pos.x, this.pos.y, p.pos.x, p.pos.y);
+//          }
+//          // else if (d > 100 && d < 120) {
+//          //    stroke('rgba(255,255,255,0.2)');
+//          //    line(this.pos.x, this.pos.y, p.pos.x, p.pos.y);
+//          // }
+
+//       })
+//    }
+// }
+
+document.addEventListener("DOMContentLoaded", function (event) {
+   let startButton = document.querySelector("#startBtn");
+   let startPage = document.querySelector("#boxshadow");
+
+   // document.body.style.backgroundColor = 
+
+
+
+
+
+   startPage.style.display = "none";
+   startButton.addEventListener("click", () => {
+      particles = [];
+      background(37, 38, 39);
+      canvas.width = "0";
+      canvas.height = "0";
+      startPage.style.display = "none"; a
+
    })
-
-}
-
-class Particle {
-   constructor() {
-      this.pos = createVector(random(window.innerWidth), random(window.innerHeight - 98));
-      this.speed = createVector(random(-2, 2), random(-2, 2));
-      this.size = 10;
-   }
-
-   //creating another circle near the previous one
-   update() {
-      this.pos.add(this.speed);
-
-      this.wall();
-      // console.log(window.innerWidth);
-      // console.log(window.innerHeight);
-   }
-
-   draw() {
-      noStroke();
-      fill('rgba(255,186,72,0.5)');
-      circle(this.pos.x, this.pos.y, this.size);
-   }
-
-   //detect wall : 
-   wall() {
-      if (this.pos.x < 10 || this.pos.x > window.innerWidth - 10) {
-         this.speed.x = this.speed.x * -1;
-      }
-      if (this.pos.y < 10 || this.pos.y > window.innerHeight - 100) {
-         this.speed.y = this.speed.y * -1;
-      }
-
-   }
-
-   //connect the particle
-
-   connect(particles) {
-      particles.forEach(p => {
-         const d = dist(this.pos.x, this.pos.y, p.pos.x, p.pos.y);
-
-         if (d < 120) {
-            stroke('rgba(255,186,72,0.2)');
-            line(this.pos.x, this.pos.y, p.pos.x, p.pos.y);
-         }
-         // else if (d > 100 && d < 120) {
-         //    stroke('rgba(255,255,255,0.2)');
-         //    line(this.pos.x, this.pos.y, p.pos.x, p.pos.y);
-         // }
-
-      })
-   }
-}
+});
