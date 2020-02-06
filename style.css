@@ -7,13 +7,12 @@
 
 :root{
    --primaryColor: #FFBA48;
-   --secondaryColor:  #ca1d90 ;
+   --secondaryColor:  #ffa260 ;
 }
 
 /* utilities */
 a{
    text-decoration: none;
-   /* color: darkblue; */
 }
 
 li{
@@ -21,13 +20,8 @@ li{
 }
 
 body{
-   /* background: #252627; */
    background: linear-gradient(to left, #000000, #434343); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-   /* background-image: radial-gradient(circle, #0F2027, #203A43, #2C5364); */
-   /* #0F2027
-   #203A43
-   #2C5364 */
-   overflow:hidden;
+  
 }
 
 /* navigation menu */
@@ -104,22 +98,7 @@ header nav ul li a:hover{
    transition: 0.3s ease-in-out;
 }
 
-/* starting page */
 
- /* #startBtn{
-   background: pink;
-   position: absolute;
-   width: 100px;
-   height: 100px;
-   border: 1px red solid;
-   
-}  */
-
-
-/* canvas::after{
-  box-shadow: inset 110px 90px 250px  #000000, inset -110px -90px 250px #000000;
-
-} */
 
 #boxshadow{
    height: 100vh;
@@ -141,11 +120,7 @@ header nav ul li a:hover{
  
    transform: translate(-50%,-50%);
    position: absolute;
-   /* border: 1px red solid; */
-   /* border: 1px red solid; */
-   /* z-index: 2; */
-   /* box-shadow: inset 110px 90px 250px  #000000, inset -110px -90px 250px #000000;; */
-   
+  
  }
  
 #startPage h2{
@@ -168,7 +143,6 @@ header nav ul li a:hover{
    top:150%;
    left:50%;
    transform: translate(-50%,-50%);
-   /* background: red; */
    
 }
 
@@ -183,20 +157,17 @@ header nav ul li a:hover{
 #about{
    color: white;
    display: flex;
-   /* border:1px red solid; */
    max-width: 1200px;
    margin: 3rem auto;
    justify-content: center;
    align-items: center;
    font-family: 'Playfair Display', serif;
-   /* flex-wrap: wrap; */
    
 }
 
 
 #about-content{
    flex:1;
-   /* border: 1px blue solid; */
    height: 500px;
    text-align: left;
    padding: 6rem 1rem 1rem 5rem;
@@ -206,7 +177,6 @@ header nav ul li a:hover{
 #about-image{
    flex:1;
    height: 500px;
-   /* border: 1px blue solid; */
    padding: 1rem;
    text-align: left;
 
@@ -220,12 +190,9 @@ header nav ul li a:hover{
    color: var(--primaryColor);
 }
 #typeEffect::after{
-   /* border:1px red solid; */
    content: "";
-   /* position: absolute; */
-   /* top: 0%; */
-   /* opacity: 0.5; */
-   animation: letterAnimation 15s  ease infinite;
+  
+   animation: letterAnimation 12s  ease infinite;
 }
 @keyframes letterAnimation{
 
@@ -272,14 +239,140 @@ header nav ul li a:hover{
    
 }
 
+
+#github-logo{
+  display: flex;
+   margin-top: 5rem;
+   align-items: center;
+
+}
+#github-logo i {
+  flex: 0.225;
+
+
+}
+#github-logo a{
+   letter-spacing: 2px;
+ 
+   letter-spacing: 4px;
+   flex:0.3;
+   color: white;
+   padding: 1rem 0.5rem;
+   text-align: center;
+   border: var(--secondaryColor) 1px solid;
+   font-size: 1.1rem;
+   box-shadow: 1px 1px 50px var(--secondaryColor),  -1px -1px 50px var(--secondaryColor); 
+
+}
+#github-logo a:hover{
+   animation: githubLogo 1s forwards;
+
+ }
+ @keyframes githubLogo{
+   to{
+
+      box-shadow: inset 1px 1px 50px var(--secondaryColor), inset  -1px -1px 50px var(--secondaryColor); 
+
+   }
+ }
+ 
+
+
 #about-image img{
    display: block;
-   /* height: 350px; */
-   /* border: 1px red solid; */
-   /* margin-bottom: 1rem; */
+ 
 }
 #about-image p{
    letter-spacing: 0rem;
-   /* padding: 0.3rem; */
    text-align: left;
 }
+
+/* Skills section */
+
+.container{
+   text-align: center;
+   max-width: 1200px;
+   margin: 0 auto;
+}
+
+#WhoAmI{
+   margin:150px auto 100px auto;
+}
+
+.heading{
+   margin: 2rem;
+   font-family: 'Playfair Display', serif;
+   color: white;
+   letter-spacing: 4px;
+   text-align: center;
+   text-transform: uppercase;
+   position: relative;
+}
+
+.heading::after{
+   content: "";
+   position: absolute;
+   border:0.5px var(--primaryColor) solid;
+   left: 50%;
+   right: 50%;
+   bottom: -50%;
+   width: 15%;
+   transform: translate(-50%,-50%);
+  
+}
+
+
+.container ul{
+   margin: 100px 50px 80px 50px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.container ul li {
+   flex:1;  
+   text-transform: uppercase;
+   letter-spacing: 2px;
+   font-size: 1.1rem;
+   
+}
+.container ul li a {
+   color:rgb(230, 224, 224);
+   cursor: pointer;
+   padding: 1rem;
+   
+}
+.container ul li a:hover{
+   background: #434343;
+}
+.pressed{
+   background: #434343;
+
+}
+.container div{
+   margin: 50px;
+   border: 1px #faf8f8 solid;
+   padding: 3rem 0;
+   display: none;
+   grid-template-columns: 120px 120px 120px;
+   grid-gap: 4rem;
+   justify-content: space-evenly;
+   align-content: start;
+   height: 50vh;
+
+}
+
+#WhoAmI div img{
+   width: 125px;
+   height: 125px;
+   background: #EBEBEB;
+   border-radius: 15%;
+}
+
+
+#WhoAmI div img:hover{
+   opacity: 0.3;
+   transition: s ease-in-out;
+}
+
+

@@ -87,14 +87,11 @@
 // }
 
 document.addEventListener("DOMContentLoaded", function (event) {
+
+   //startPage section
+
    let startButton = document.querySelector("#startBtn");
    let startPage = document.querySelector("#boxshadow");
-
-   // document.body.style.backgroundColor = 
-
-
-
-
 
    startPage.style.display = "none";
    startButton.addEventListener("click", () => {
@@ -105,4 +102,32 @@ document.addEventListener("DOMContentLoaded", function (event) {
       startPage.style.display = "none"; a
 
    })
+
+   //skills section
+   let skillNav = document.querySelectorAll("#WhoAmI ul li a");
+   let skills = document.querySelectorAll("#WhoAmI div");
+
+   skillNav.forEach((link, index) => {
+      if (link.className == "pressed") {
+         skills[index].style.display = "grid";
+
+      }
+      // console.log(link.className)
+      link.addEventListener("click", () => {
+
+
+         skillNav.forEach(link => {
+            link.classList.remove("pressed");
+         })
+         skills.forEach((skill, idx) => {
+            skill.style.display = "none";
+            if (index == idx) {
+               skill.style.display = "grid";
+            }
+
+         })
+         link.classList.add("pressed")
+      })
+   })
+
 });
