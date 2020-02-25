@@ -375,4 +375,94 @@ header nav ul li a:hover{
    transition: s ease-in-out;
 }
 
+/* Time Line */
 
+.center{
+   margin: auto;
+   max-width: 1200px;
+   /* border: 1px red solid; */
+   /* text-align: center; */
+}
+
+#timeLine ul{
+   padding: 50px 0;
+   color: black;
+}
+#timeLine ul li{
+   position: relative;
+   width: 2px;
+   margin: 0 auto;
+   background: #faf8f8;
+   
+}
+#timeLine ul li div{
+  position: relative;
+  bottom: 0;
+  width: 350px;
+  height: 200px;
+  padding: 1rem;
+  background: var(--primaryColor);
+  transition: all 0.5s ease-in-out;
+  visibility: hidden;
+  opacity: 0;
+}
+
+#timeLine ul li:nth-child(odd) div{
+   left:40px;
+   transform: translateX(200px);
+}
+#timeLine ul li:nth-child(even) div{
+   left:-384px;
+   transform: translateX(-200px);
+
+}
+
+#timeLine ul li::after{
+   content: "";
+   position: absolute;
+   left: 50%;
+   bottom: 0;
+   width: 15px;
+   height: 15px;
+   background: var(--primaryColor);
+   transform: translateX(-50%);
+   border-radius: 50%;
+   transition: background 0.5s ease-in-out;
+}
+
+.center div::before{
+   content: "";
+   position: absolute;
+   bottom: 5px;
+   width: 0px;
+   height: 0px;
+   border-style: solid;
+
+}
+
+#timeLine{
+   font-family: 'Playfair Display', serif;
+
+}
+.center li div p{
+   padding: 1rem;
+   /* letter-spacing: 0.1rem; */
+}
+
+#timeLine ul li:nth-child(odd) div::before{
+   left:-15px;
+   border-width: 8px 16px 8px 0;
+   border-color: transparent var(--primaryColor) transparent transparent;
+}
+#timeLine ul li:nth-child(even) div::before{
+   right:-15px;
+   border-width: 8px 0px 8px 16px;
+   border-color: transparent  transparent transparent var(--primaryColor);
+}
+
+/* js animation add class when scroll */
+li.show div{
+   transform: translateX(0) !important;
+   opacity: 1 !important;
+   visibility: visible !important;
+}

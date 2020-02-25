@@ -130,4 +130,36 @@ document.addEventListener("DOMContentLoaded", function (event) {
       })
    })
 
+   //timeline scrolling animation
+   let timelines = document.querySelectorAll("#timeLine li");
+
+   const checkViewPort = el => {
+      const rect = el.getBoundingClientRect();
+      console.log(rect)
+      if (rect.top >= 0 && rect.left >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+      ) {
+         console.log(true)
+      } else {
+         console.log(false)
+      }
+      return (
+         rect.top >= 0 && rect.left >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+      );
+
+   }
+
+   const run = () => {
+      timelines.forEach(timeline => {
+         console.log(timeline);
+         if (checkViewPort(timeline)) {
+            timeline.classList.add("show");
+            console.log("show")
+         }
+      })
+   }
+
+   window.addEventListener("load", run)
+   window.addEventListener("resize", run)
+   window.addEventListener("scroll", run)
+
 });
