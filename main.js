@@ -28,7 +28,6 @@ function draw() {
       p.update();
       p.draw();
       p.connect(particles.slice(index));
-      // console.log(particles.slice(index))
    })
 
 }
@@ -45,8 +44,6 @@ class Particle {
       this.pos.add(this.speed);
 
       this.wall();
-      // console.log(window.innerWidth);
-      // console.log(window.innerHeight);
    }
 
    draw() {
@@ -117,65 +114,69 @@ document.addEventListener("DOMContentLoaded", function (event) {
       projectPage.style.display = "block";
       nav.style.background = "none";
 
-   })
+      //skills section
+      let skillNav = document.querySelectorAll("#WhoAmI ul li a");
+      let skills = document.querySelectorAll("#WhoAmI div");
 
-   //skills section
-   let skillNav = document.querySelectorAll("#WhoAmI ul li a");
-   let skills = document.querySelectorAll("#WhoAmI div");
+      skillNav.forEach((link, index) => {
+         if (link.className == "pressed") {
+            skills[index].style.display = "grid";
 
-   skillNav.forEach((link, index) => {
-      if (link.className == "pressed") {
-         skills[index].style.display = "grid";
-
-      }
-      // console.log(link.className)
-      link.addEventListener("click", () => {
-
-
-         skillNav.forEach(link => {
-            link.classList.remove("pressed");
-         })
-         skills.forEach((skill, idx) => {
-            skill.style.display = "none";
-            if (index == idx) {
-               skill.style.display = "grid";
-            }
-
-         })
-         link.classList.add("pressed")
-      })
-   })
-
-   //timeline scrolling animation
-   let timelines = document.querySelectorAll("#timeLine li");
-
-   const checkViewPort = el => {
-      const rect = el.getBoundingClientRect();
-      console.log(rect)
-      if (rect.top >= 0 && rect.left >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-      ) {
-         console.log(true)
-      } else {
-         console.log(false)
-      }
-      return (
-         rect.top >= 0 && rect.left >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-      );
-
-   }
-
-   const run = () => {
-      timelines.forEach(timeline => {
-         console.log(timeline);
-         if (checkViewPort(timeline)) {
-            timeline.classList.add("show");
-            console.log("show")
          }
-      })
-   }
+         // console.log(link.className)
+         link.addEventListener("click", () => {
 
-   window.addEventListener("load", run)
-   window.addEventListener("resize", run)
-   window.addEventListener("scroll", run)
+
+            skillNav.forEach(link => {
+               link.classList.remove("pressed");
+            })
+            skills.forEach((skill, idx) => {
+               skill.style.display = "none";
+               if (index == idx) {
+                  skill.style.display = "grid";
+               }
+
+            })
+            link.classList.add("pressed")
+         })
+      })
+
+      //timeline scrolling animation
+      let timelines = document.querySelectorAll("#timeLine li");
+      let timeline = document.querySelectorAll("#timeLine");
+
+
+      const checkViewPort = el => {
+         const rect = el.getBoundingClientRect();
+
+         if (rect.top >= 0 && rect.left >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+         ) {
+            console.log(true)
+         } else {
+            console.log(false)
+         }
+         return (
+            rect.top >= 0 && rect.left >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+         );
+
+      }
+
+      const run = () => {
+         timelines.forEach(timeline => {
+            // console.log(timeline);
+            if (checkViewPort(timeline)) {
+               timeline.classList.add("show");
+               // console.log("show")
+            }
+         })
+      }
+
+      window.addEventListener("load", run)
+      window.addEventListener("resize", run)
+      window.addEventListener("scroll", run)
+
+   })
+
+
 
 });
