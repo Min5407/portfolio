@@ -21,12 +21,12 @@ li{
 
 body{
    background: linear-gradient(to left, #000000, #434343); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  
+ 
 }
 
 /* navigation menu */
 header{
-   /* background: #222; */
+   background: rgb(37, 38, 39);
 
 
 }
@@ -101,11 +101,10 @@ header nav ul li a:hover{
 
 
 #boxshadow{
-   height: 100vh;
+   height: 80vh;
    width: 100%;
    position: absolute;
-   box-shadow: inset 400px 400px 400px  #000000, inset -400px -400px 400px #000000;
-   animation: shadow 1s ease-in-out forwards;
+   
 }
 
 @keyframes shadow{
