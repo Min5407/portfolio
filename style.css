@@ -465,3 +465,23 @@ li.show div{
    opacity: 1 !important;
    visibility: visible !important;
 }
+
+/* Projects section */
+
+#projects .center{
+   display: grid;
+   grid-template-columns: repeat(3,1fr);
+   grid-gap: 0rem;
+   justify-content: center;
+   align-items: center;
+
+}
+div.project{
+   margin:4rem;
+   border: red solid 1px;
+   width: 250px;
+   height: 250px;
+}
+
+
+
