@@ -205,11 +205,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
       data.skills.forEach((skill) => {
         modalSkills.innerText += skill + " ";
       });
-      modalLink.innerText = "view";
+      modalLink.innerText = "Go to Website";
       modalLink.href = data.link;
       modalLink.target = "_blank";
 
-      github.classList.add("fab fa-github-square fa-5x");
+      github.className = "fab fa-github-square fa-4x";
+      // github.classList.add("fab fa-github-square fa-5x");
       modalDiv.innerHTML =
         modalHeading.outerHTML +
         modalDescription.outerHTML +

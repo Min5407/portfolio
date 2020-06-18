@@ -171,7 +171,7 @@ header nav ul li a:hover {
 #typeEffect::after {
   content: "";
 
-  animation: letterAnimation 12s ease infinite;
+  animation: letterAnimation 7s ease infinite;
 }
 @keyframes letterAnimation {
   0% {
@@ -440,7 +440,7 @@ div.project {
   width: 250px;
   cursor: pointer;
   object-fit: fill;
-  transition: 0.5s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 .projects:hover {
   transform: scale(1.1);
@@ -461,11 +461,70 @@ div.project {
   align-items: center;
 }
 
-#modal div {
-  color: white;
+#modal img {
+  width: 45%;
+  height: 80%;
+  padding: 0.6rem;
+  background-color: #ffba48;
+  border: 0.3rem white solid;
 }
 
-#modal img {
-  width: 400px;
-  height: 400px;
+#modal div {
+  width: 45%;
+  height: 80%;
+  color: black;
+  text-align: center;
+  background-color: #fff;
+  padding: 5rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+#modal div::after {
+  content: "X";
+  font-weight: bolder;
+  color: #fa9349;
+  position: absolute;
+  top: -10%;
+  right: -8%;
+  padding: 0.1rem;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+#modal div h3 {
+  font-size: 4rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+#modal div p {
+  padding: 1rem;
+  font-size: 1.2rem;
+  letter-spacing: 3px;
+  margin: 1rem;
+  text-transform: uppercase;
+}
+
+#modal div a {
+  color: black;
+  font-size: 1.5rem;
+  position: absolute;
+  left: 10%;
+  bottom: 8%;
+  padding: 0.5rem;
+  background-color: #fa9349;
+  border-radius: 20%;
+}
+#modal div i {
+  /* font-size: 1.5rem; */
+  color: #fa9349;
+  position: absolute;
+  right: 10%;
+  bottom: 8%;
+  cursor: pointer;
+  /* text-decoration: none; */
+}
+#modal div i:hover,
+#modal div a:hover {
+  opacity: 0.9;
 }
