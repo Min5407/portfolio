@@ -1,4 +1,4 @@
-// // var projectData = require("./data");
+// var projectData = require("./data");
 
 // //particle effects
 // let particles = [];
@@ -192,9 +192,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
       let modalDescription = document.createElement("p");
       let modalSkills = document.createElement("p");
       let modalLink = document.createElement("a");
-      let github = document.createElement("i");
+      let gitContainer = document.createElement("a");
+      let github = document.createElement("span");
 
+      gitContainer.appendChild(github);
+      //projectData is a object from data.js file
       let data = projectData[index];
+      modalLink.id = "link";
+      gitContainer.id = "github";
       console.log(data);
       modalLink.innerText = "View Website";
       modalHeading.innerText = data.name;
@@ -203,19 +208,23 @@ document.addEventListener("DOMContentLoaded", function (event) {
         modalSkills.innerText += skill + " ";
       });
       modalLink.innerText = "Go to Website";
+
       modalLink.href = data.link;
       modalLink.target = "_blank";
 
+      gitContainer.href = data.gitHub;
+      gitContainer.target = "_blank";
+
       github.className = "fab fa-github-square fa-4x";
+
       // github.classList.add("fab fa-github-square fa-5x");
       modalDiv.innerHTML =
         modalHeading.outerHTML +
         modalDescription.outerHTML +
         modalSkills.outerHTML +
         modalLink.outerHTML +
-        github.outerHTML;
+        gitContainer.outerHTML;
 
-      // modalDiv.appendChild();
       modalImage.src = img.src;
       console.log(img.src);
       if (modal.firstChild) {
@@ -224,6 +233,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
       modal.appendChild(modalImage);
       modal.appendChild(modalDiv);
+
+      // github.click = alert("helo");
     });
   });
 

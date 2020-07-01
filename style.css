@@ -480,7 +480,7 @@ div.project {
   flex-direction: column;
   position: relative;
 }
-#modal div::before {
+#modal > div::before {
   position: absolute;
   content: "";
   right: 5%;
@@ -491,7 +491,7 @@ div.project {
   z-index: 0;
   opacity: 0.6;
 }
-#modal div::after {
+/* #modal > div::after {
   content: "X";
   font-weight: bolder;
   color: #fa9349;
@@ -501,7 +501,7 @@ div.project {
   padding: 0.1rem;
   font-size: 2rem;
   cursor: pointer;
-}
+} */
 
 #modal div h3 {
   font-size: 4rem;
@@ -516,7 +516,7 @@ div.project {
   text-transform: uppercase;
 }
 
-#modal div a {
+#modal div #link {
   color: black;
   font-size: 1.5rem;
   position: absolute;
@@ -526,15 +526,16 @@ div.project {
   background-color: #fa9349;
   border-radius: 20%;
 }
-#modal div i {
-  /* font-size: 1.5rem; */
+
+#modal div #github {
   color: #fa9349;
   position: absolute;
   right: 10%;
   bottom: 8%;
+  border: none;
   cursor: pointer;
-  /* text-decoration: none; */
 }
+
 #modal div i:hover,
 #modal div a:hover {
   opacity: 0.9;
