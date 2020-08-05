@@ -47,7 +47,23 @@ const projectData = [
     name: "Financial Company",
     skills: ["html,", "Css,", "jquery,", "Google-Map api"],
     link: "https://hardcore-murdock-916a3b.netlify.app/",
-    gitHub: "https://github.com/Min5407/NewsGrid",
-    description: "Sports News Website",
+    gitHub:
+      "https://github.com/Min5407/Css_projects/tree/master/Project2_responsive(company)",
+    description: "Financial company Website",
+  },
+  {
+    name: "Covid 19",
+    skills: [
+      "React,",
+      "Scss,",
+      "covid api,",
+      "firebase",
+      "Material UI",
+      "ApexChart",
+      "Ip location api",
+    ],
+    link: "https://covid-19-web-f0daa.web.app/",
+    gitHub: "https://github.com/Min5407/covid19-react",
+    description: "Covid 19 Website",
   },
 ];
