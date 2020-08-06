@@ -443,7 +443,6 @@ div.project {
   height: 250px;
   width: 250px;
   cursor: pointer;
-  object-fit: fill;
   transition: 0.3s ease-in-out;
 }
 .projects:hover {
